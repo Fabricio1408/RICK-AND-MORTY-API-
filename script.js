@@ -10,8 +10,13 @@ const fetchApi = (value) => {
         console.log(data)
         return data;
     });
+    return result;
 };
 
-btnGo.addEventListener('click', () => {
+btnGo.addEventListener('click', async(event) => {
+    event.preventDefault();
+    const result = await fetchApi(characterId.value);
+    content.textContent = `${JSON.stringify(result, undefined, 2)}`;
 
+    image.src = `${result.image}`;
 });
