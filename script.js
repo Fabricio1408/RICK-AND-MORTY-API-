@@ -1,7 +1,3 @@
-setInterval(function() {
-    location.reload();
-}, 5000);
-
 const characterId = document.getElementById('characterId');
 const btnGo = document.getElementById('btn-go');
 const content = document.getElementById('content');
