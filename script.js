@@ -1,6 +1,6 @@
 setInterval(function() {
     location.reload();
-}, 2000);
+}, 5000);
 
 const characterId = document.getElementById('characterId');
 const btnGo = document.getElementById('btn-go');
@@ -9,7 +9,11 @@ const image = document.getElementById('img');
 
 const fetchApi = (value) => {
     const result = fetch(`https://rickandmortyapi.com/api/character/${value}`)
-    
+    .then((res)=> res.json())
+    .then((data)=>{
+        console.log(data)
+        return data;
+    });
 };
 
 btnGo.addEventListener('click', () => {
